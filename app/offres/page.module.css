@@ -1,0 +1,9 @@
+.text {
+  color: red;
+  font-size: 40px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}

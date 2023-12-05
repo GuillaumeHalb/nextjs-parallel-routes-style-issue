@@ -1,0 +1,12 @@
+.body {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.body > :first-child {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}

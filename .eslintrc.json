@@ -1,0 +1,159 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "document": true,
+    "window": true,
+    "Intl": true,
+    "fetch": true,
+    "alert": true,
+    "process": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "react", "react-hooks", "@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": true,
+        "ts-nocheck": true,
+        "ts-check": true,
+        "minimumDescriptionLength": 10
+      }
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/semi": "error",
+    "comma-dangle": ["error", "only-multiline"],
+    "eol-last": "error",
+    "id-length": [
+      "error",
+      {
+        "exceptions": ["_", "x", "y"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": ["builtin", "external", ["parent", "sibling", "index"]],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "react-dom",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"]
+      }
+    ],
+    "jsx-quotes": ["error", "prefer-double"],
+    "max-len": ["error", { "code": 80, "ignorePattern": "^import\\W.*" }],
+    "max-lines": ["error", { "skipComments": true, "skipBlankLines": true }],
+    "max-lines-per-function": [
+      "error",
+      {
+        "max": 50,
+        "skipComments": true,
+        "skipBlankLines": true
+      }
+    ],
+    "no-console": ["warn", { "allow": ["debug", "error", "info", "warn"] }],
+    "no-empty-function": "off",
+    "no-duplicate-imports": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "message": "Please use import foo from 'lodash/foo' instead.",
+            "name": "lodash"
+          }
+        ]
+      }
+    ],
+    "no-shadow": "off",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "quotes": ["error", "double"],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".ts", ".tsx"]
+      }
+    ],
+    "react/jsx-max-props-per-line": ["error", { "when": "always" }],
+    "react/jsx-sort-props": ["error", {}],
+    "react/jsx-uses-react": "off",
+    "react/prop-types": "warn",
+    "react/react-in-jsx-scope": "off",
+    "semi": "off",
+    "sort-keys": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": false,
+        "minKeys": 2,
+        "natural": false
+      }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Detect react version
+    }
+  }
+}
